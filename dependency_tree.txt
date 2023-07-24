@@ -1,4 +1,4 @@
-[INFO] com.RESTRICTED-MODULE-NAME:rest:war:0.0.1-SNAPSHOT
+[INFO] com.RESTRICTED-NAME:rest:war:0.0.1-SNAPSHOT
 [INFO] +- redis.clients:jedis:jar:3.7.1:compile
 [INFO] |  \- org.slf4j:slf4j-api:jar:1.7.30:compile
 [INFO] +- org.springframework.boot:spring-boot-starter-data-redis:jar:2.7.2:compile
@@ -9,8 +9,7 @@
 [INFO] |     +- io.netty:netty-common:jar:4.1.79.Final:compile
 [INFO] |     +- io.netty:netty-handler:jar:4.1.79.Final:compile
 [INFO] |     |  \- io.netty:netty-transport-native-unix-common:jar:4.1.79.Final:compile
-[INFO] |     +- io.netty:netty-transport:jar:4.1.79.Final:compile
-[INFO] |     \- io.projectreactor:reactor-core:jar:3.3.22.RELEASE:compile
+[INFO] |     \- io.netty:netty-transport:jar:4.1.79.Final:compile
 [INFO] +- org.apache.commons:commons-pool2:jar:2.11.1:compile
 [INFO] +- org.junit.jupiter:junit-jupiter-engine:jar:5.3.1:test
 [INFO] |  +- org.apiguardian:apiguardian-api:jar:1.0.0:test
@@ -29,7 +28,6 @@
 [INFO] |  |  +- jakarta.annotation:jakarta.annotation-api:jar:1.3.5:compile
 [INFO] |  |  \- org.yaml:snakeyaml:jar:1.30:compile
 [INFO] |  +- org.springframework.boot:spring-boot-starter-json:jar:2.7.2:compile
-[INFO] |  |  \- com.fasterxml.jackson.core:jackson-databind:jar:2.13.3:compile
 [INFO] |  +- org.springframework.boot:spring-boot-starter-tomcat:jar:2.7.2:compile
 [INFO] |  |  \- org.apache.tomcat.embed:tomcat-embed-el:jar:9.0.65:compile
 [INFO] |  +- org.springframework:spring-web:jar:5.3.22:compile
@@ -46,7 +44,7 @@
 [INFO] |  \- net.minidev:json-smart:jar:2.4.7:compile
 [INFO] |     \- net.minidev:accessors-smart:jar:2.4.7:compile
 [INFO] |        \- org.ow2.asm:asm:jar:9.1:compile
-[INFO] +- com.RESTRICTED-MODULE-NAME.server.data:RESTRICTED-MODULE-NAMEServerData:jar:1.0:compile
+[INFO] +- com.RESTRICTED-NAME.server.data:RESTRICTED-NAMEServerData:jar:1.0:compile
 [INFO] |  +- org.redisson:redisson:jar:3.17.5:compile
 [INFO] |  |  +- io.netty:netty-codec:jar:4.1.79.Final:compile
 [INFO] |  |  +- io.netty:netty-buffer:jar:4.1.79.Final:compile
@@ -54,13 +52,14 @@
 [INFO] |  |  +- io.netty:netty-resolver-dns:jar:4.1.79.Final:compile
 [INFO] |  |  |  \- io.netty:netty-codec-dns:jar:4.1.79.Final:compile
 [INFO] |  |  +- javax.cache:cache-api:jar:1.1.1:compile
+[INFO] |  |  +- io.projectreactor:reactor-core:jar:3.4.18:compile
 [INFO] |  |  +- org.reactivestreams:reactive-streams:jar:1.0.4:compile
 [INFO] |  |  +- io.reactivex.rxjava3:rxjava:jar:3.1.5:compile
 [INFO] |  |  +- org.jboss.marshalling:jboss-marshalling:jar:2.0.11.Final:compile
 [INFO] |  |  +- org.jboss.marshalling:jboss-marshalling-river:jar:2.0.11.Final:compile
 [INFO] |  |  \- org.jodd:jodd-bean:jar:5.1.6:compile
 [INFO] |  |     \- org.jodd:jodd-core:jar:5.1.6:compile
-[INFO] |  +- com.RESTRICTED-MODULE-NAME.server:RESTRICTED-MODULE-NAMEServer-commons:jar:1.0:compile
+[INFO] |  +- com.RESTRICTED-NAME.server:RESTRICTED-NAMEServer-commons:jar:1.0:compile
 [INFO] |  |  +- org.modelmapper:modelmapper:jar:3.0.0:compile
 [INFO] |  |  +- org.hibernate:hibernate-core:jar:5.6.5.Final:compile
 [INFO] |  |  |  +- javax.persistence:javax.persistence-api:jar:2.2:compile
@@ -75,7 +74,6 @@
 [INFO] |  |  |  \- jakarta.validation:jakarta.validation-api:jar:3.0.0:compile
 [INFO] |  |  +- org.hibernate:hibernate-ehcache:jar:5.6.5.Final:compile
 [INFO] |  |  +- org.hibernate:hibernate-jpamodelgen:jar:5.6.5.Final:compile
-[INFO] |  |  +- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.13.4:compile
 [INFO] |  |  +- org.imgscalr:imgscalr-lib:jar:4.2:compile
 [INFO] |  |  +- org.apache.logging.log4j:log4j-api:jar:2.17.1:compile
 [INFO] |  |  +- org.apache.logging.log4j:log4j-core:jar:2.17.1:compile
@@ -367,13 +365,15 @@
 [INFO] |  \- org.wildfly.security:wildfly-elytron-security-manager:jar:1.19.0.Final:compile
 [INFO] |     \- org.wildfly.security:wildfly-elytron-security-manager-action:jar:1.19.0.Final:compile
 [INFO] +- com.auth0:java-jwt:jar:3.11.0:compile
-[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.13.2:compile
-[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.13.2:compile
-[INFO] |  \- com.fasterxml.jackson.core:jackson-core:jar:2.13.2:compile
-[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.13.2:compile
-[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:jar:2.13.2:compile
+[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.13.5:compile
+[INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.13.5:compile
+[INFO] |  \- com.fasterxml.jackson.core:jackson-core:jar:2.13.5:compile
+[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.13.5:compile
+[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:jar:2.13.5:compile
 [INFO] |  \- javax.transaction:javax.transaction-api:jar:1.3:compile
-[INFO] +- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.13.2:compile
+[INFO] +- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.13.5:compile
+[INFO] +- com.fasterxml.jackson.core:jackson-databind:jar:2.13.5:compile
+[INFO] +- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:jar:2.15.2:compile
 [INFO] +- org.springframework:spring-websocket:jar:5.3.22:compile
 [INFO] |  +- org.springframework:spring-context:jar:5.3.22:compile
 [INFO] |  \- org.springframework:spring-core:jar:5.3.22:compile
