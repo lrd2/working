@@ -1,0 +1,680 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "JavaInUse API reference for developers",
+        "title": "JavaInUse API"
+    },
+    "host": "localhost:8088",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "basic-error-controller",
+            "description": "Basic Error Controller"
+        },
+        {
+            "name": "operation-handler",
+            "description": "Operation Handler"
+        },
+        {
+            "name": "order-controller",
+            "description": "Order Controller"
+        },
+        {
+            "name": "web-mvc-links-handler",
+            "description": "Web Mvc Links Handler"
+        }
+    ],
+    "paths": {
+        "/actuator": {
+            "get": {
+                "tags": [
+                    "web-mvc-links-handler"
+                ],
+                "summary": "links",
+                "operationId": "linksUsingGET",
+                "produces": [
+                    "application/vnd.spring-boot.actuator.v3+json",
+                    "application/json",
+                    "application/vnd.spring-boot.actuator.v2+json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object",
+                                "additionalProperties": {
+                                    "$ref": "#/definitions/Link"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/actuator/health": {
+            "get": {
+                "tags": [
+                    "operation-handler"
+                ],
+                "summary": "handle",
+                "operationId": "handleUsingGET_1",
+                "produces": [
+                    "application/vnd.spring-boot.actuator.v3+json",
+                    "application/json",
+                    "application/vnd.spring-boot.actuator.v2+json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body",
+                        "required": false,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/actuator/health/**": {
+            "get": {
+                "tags": [
+                    "operation-handler"
+                ],
+                "summary": "handle",
+                "operationId": "handleUsingGET",
+                "produces": [
+                    "application/vnd.spring-boot.actuator.v3+json",
+                    "application/json",
+                    "application/vnd.spring-boot.actuator.v2+json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body",
+                        "required": false,
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/error": {
+            "get": {
+                "tags": [
+                    "basic-error-controller"
+                ],
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingGET",
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ModelAndView"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            },
+            "head": {
+                "tags": [
+                    "basic-error-controller"
+                ],
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingHEAD",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ModelAndView"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "deprecated": false
+            },
+            "post": {
+                "tags": [
+                    "basic-error-controller"
+                ],
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ModelAndView"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            },
+            "put": {
+                "tags": [
+                    "basic-error-controller"
+                ],
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingPUT",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ModelAndView"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            },
+            "delete": {
+                "tags": [
+                    "basic-error-controller"
+                ],
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingDELETE",
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ModelAndView"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "deprecated": false
+            },
+            "options": {
+                "tags": [
+                    "basic-error-controller"
+                ],
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingOPTIONS",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ModelAndView"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "deprecated": false
+            },
+            "patch": {
+                "tags": [
+                    "basic-error-controller"
+                ],
+                "summary": "errorHtml",
+                "operationId": "errorHtmlUsingPATCH",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "text/html"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ModelAndView"
+                        }
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                },
+                "deprecated": false
+            }
+        },
+        "/mtask": {
+            "post": {
+                "tags": [
+                    "order-controller"
+                ],
+                "summary": "Operation creates tasks in HES through dedicated queue.",
+                "description": "API request represents RabbitMQ message as a JSON payload, which is enqueued by mTask to 'createTaskRequest' queue and then processed by HES. API response represents RabbitMQ message as a JSON payload, which is enqueued by HES to 'createTaskResponse' queue and then processed by mTask.",
+                "operationId": "createTaskUsingPOST",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "*/*",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "JSONrequest",
+                        "description": "createOrderRequest",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateOrderRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/CreateOrderResponse"
+                        }
+                    },
+                    "201": {
+                        "description": "Created"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "CreateOrderRequest": {
+            "type": "object",
+            "required": [
+                "meterSerialNumber",
+                "meterType",
+                "operationType",
+                "orderNumber",
+                "validTo"
+            ],
+            "properties": {
+                "activationDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2000-10-31T01:30:00.000-05:00",
+                    "description": "Required for 'TARIFF_WRITE' operation type. Should be provided in ISO string."
+                },
+                "executionDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2000-10-31T01:30:00.000-05:00",
+                    "description": "Required for 'REMOTE_DISCONNECT' and 'REMOTE_RECONNECT' operation types. Should be provided in ISO string."
+                },
+                "meterSerialNumber": {
+                    "type": "string",
+                    "example": 10006628,
+                    "description": "Numerical value of meter serial number"
+                },
+                "meterType": {
+                    "type": "string",
+                    "example": "MCS_301",
+                    "description": "Meter type names should be consistent with meter types dictionary used in HES."
+                },
+                "operationType": {
+                    "type": "string",
+                    "example": "REMOTE_DISCONNECT",
+                    "description": "Operation type, only one of following values is acceptable: TARIFF_WRITE, REMOTE_RECONNECT, REMOTE_DISCONNECT"
+                },
+                "orderNumber": {
+                    "type": "string",
+                    "example": "caf0e868-36db-11ee-be56-0242ac120002",
+                    "description": "Order number in mTask, will be further used to identify task in HES and mTask."
+                },
+                "tariffName": {
+                    "type": "string",
+                    "example": "G46",
+                    "description": "Required for 'TARIFF_WRITE' operation type. Tariff names should be consistent with tariff dictionary used in HES."
+                },
+                "validTo": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2000-10-31T01:30:00.000-05:00",
+                    "description": "Required for all operations. Date after HES will no longer try to finalize the order and will return it to mTask as failed. Should be provided in ISO string."
+                }
+            },
+            "title": "CreateOrderRequest"
+        },
+        "CreateOrderResponse": {
+            "type": "object",
+            "properties": {
+                "orderNumber": {
+                    "type": "string",
+                    "example": "caf0e868-36db-11ee-be56-0242ac120002",
+                    "description": "Order number in mTask, provided in the request."
+                },
+                "result": {
+                    "$ref": "#/definitions/CreateOrderResult"
+                }
+            },
+            "title": "CreateOrderResponse"
+        },
+        "CreateOrderResult": {
+            "type": "object",
+            "properties": {
+                "createOrderStatus": {
+                    "type": "string",
+                    "example": "DENIED",
+                    "description": "Status of order processing in HES. If status is 'ACCEPTED', then the list of errors will be empty.",
+                    "enum": [
+                        "ACCEPTED",
+                        "DENIED"
+                    ]
+                },
+                "errors": {
+                    "type": "array",
+                    "description": "List of errors which occurred during order processing",
+                    "items": {
+                        "$ref": "#/definitions/Error"
+                    }
+                }
+            },
+            "title": "CreateOrderResult"
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string",
+                    "example": "This operation type is not allowed on this meter type.",
+                    "description": "Detailed description of the error."
+                },
+                "errorType": {
+                    "type": "string",
+                    "example": "OPERATION_TYPE_NOT_ALLOWED",
+                    "description": "One of enumerated error types.",
+                    "enum": [
+                        "BASIC_REQUIRED_FIELD_NOT_PROVIDED",
+                        "DISCONNECT_CONTROL_REQUIRED_FIELD_NOT_PROVIDED",
+                        "TARIFF_WRITE_FIELD_NOT_PROVIDED",
+                        "UNKNOWN_OPERATION_TYPE",
+                        "METER_TYPE_UNKNOWN",
+                        "METER_NOT_EXISTS",
+                        "METER_NOT_AVAILABLE",
+                        "TARIFF_NOT_EXISTS",
+                        "INVALID_TARIFF_ACTIVATION_DATE",
+                        "INVALID_EXECUTION_DATE",
+                        "INVALID_VALID_TO_DATE",
+                        "OPERATION_TYPE_NOT_ALLOWED",
+                        "ORDER_PROCESSING_ERROR"
+                    ]
+                }
+            },
+            "title": "Error"
+        },
+        "Link": {
+            "type": "object",
+            "properties": {
+                "href": {
+                    "type": "string"
+                },
+                "templated": {
+                    "type": "boolean"
+                }
+            },
+            "title": "Link"
+        },
+        "MapÂŤstring,LinkÂť": {
+            "type": "object",
+            "title": "MapÂŤstring,LinkÂť",
+            "additionalProperties": {
+                "$ref": "#/definitions/Link"
+            }
+        },
+        "ModelAndView": {
+            "type": "object",
+            "properties": {
+                "empty": {
+                    "type": "boolean"
+                },
+                "model": {
+                    "type": "object"
+                },
+                "modelMap": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object"
+                    }
+                },
+                "reference": {
+                    "type": "boolean"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "100 CONTINUE",
+                        "101 SWITCHING_PROTOCOLS",
+                        "102 PROCESSING",
+                        "103 CHECKPOINT",
+                        "200 OK",
+                        "201 CREATED",
+                        "202 ACCEPTED",
+                        "203 NON_AUTHORITATIVE_INFORMATION",
+                        "204 NO_CONTENT",
+                        "205 RESET_CONTENT",
+                        "206 PARTIAL_CONTENT",
+                        "207 MULTI_STATUS",
+                        "208 ALREADY_REPORTED",
+                        "226 IM_USED",
+                        "300 MULTIPLE_CHOICES",
+                        "301 MOVED_PERMANENTLY",
+                        "302 FOUND",
+                        "302 MOVED_TEMPORARILY",
+                        "303 SEE_OTHER",
+                        "304 NOT_MODIFIED",
+                        "305 USE_PROXY",
+                        "307 TEMPORARY_REDIRECT",
+                        "308 PERMANENT_REDIRECT",
+                        "400 BAD_REQUEST",
+                        "401 UNAUTHORIZED",
+                        "402 PAYMENT_REQUIRED",
+                        "403 FORBIDDEN",
+                        "404 NOT_FOUND",
+                        "405 METHOD_NOT_ALLOWED",
+                        "406 NOT_ACCEPTABLE",
+                        "407 PROXY_AUTHENTICATION_REQUIRED",
+                        "408 REQUEST_TIMEOUT",
+                        "409 CONFLICT",
+                        "410 GONE",
+                        "411 LENGTH_REQUIRED",
+                        "412 PRECONDITION_FAILED",
+                        "413 PAYLOAD_TOO_LARGE",
+                        "413 REQUEST_ENTITY_TOO_LARGE",
+                        "414 URI_TOO_LONG",
+                        "414 REQUEST_URI_TOO_LONG",
+                        "415 UNSUPPORTED_MEDIA_TYPE",
+                        "416 REQUESTED_RANGE_NOT_SATISFIABLE",
+                        "417 EXPECTATION_FAILED",
+                        "418 I_AM_A_TEAPOT",
+                        "419 INSUFFICIENT_SPACE_ON_RESOURCE",
+                        "420 METHOD_FAILURE",
+                        "421 DESTINATION_LOCKED",
+                        "422 UNPROCESSABLE_ENTITY",
+                        "423 LOCKED",
+                        "424 FAILED_DEPENDENCY",
+                        "425 TOO_EARLY",
+                        "426 UPGRADE_REQUIRED",
+                        "428 PRECONDITION_REQUIRED",
+                        "429 TOO_MANY_REQUESTS",
+                        "431 REQUEST_HEADER_FIELDS_TOO_LARGE",
+                        "451 UNAVAILABLE_FOR_LEGAL_REASONS",
+                        "500 INTERNAL_SERVER_ERROR",
+                        "501 NOT_IMPLEMENTED",
+                        "502 BAD_GATEWAY",
+                        "503 SERVICE_UNAVAILABLE",
+                        "504 GATEWAY_TIMEOUT",
+                        "505 HTTP_VERSION_NOT_SUPPORTED",
+                        "506 VARIANT_ALSO_NEGOTIATES",
+                        "507 INSUFFICIENT_STORAGE",
+                        "508 LOOP_DETECTED",
+                        "509 BANDWIDTH_LIMIT_EXCEEDED",
+                        "510 NOT_EXTENDED",
+                        "511 NETWORK_AUTHENTICATION_REQUIRED"
+                    ]
+                },
+                "view": {
+                    "$ref": "#/definitions/View"
+                },
+                "viewName": {
+                    "type": "string"
+                }
+            },
+            "title": "ModelAndView"
+        },
+        "View": {
+            "type": "object",
+            "properties": {
+                "contentType": {
+                    "type": "string"
+                }
+            },
+            "title": "View"
+        }
+    }
+}
